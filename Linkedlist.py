@@ -6,12 +6,17 @@ class Node:
 class LinkedList:
     def __init__(self):
         self.head=None
+        
+    #Function to Print the List
 
     def print_list(self):
         cur_node = self.head
         while cur_node:
             print(cur_node.data)
             cur_node = cur_node.next
+            
+            
+     #Append Function to Insert the Node at the END of the LinkedList
             
     def append(self,data):
         new_node=Node(data)
@@ -24,12 +29,19 @@ class LinkedList:
         while last_node.next:
             last_node = last_node.next
         last_node.next = new_node
+        
+        
+    #Prepend Function To add Node at the Beginning of The Linked List
 
     def prepend(self,data):
         new_node=Node(data)
         new_node.next=self.head
         self.head=new_node
 
+        
+     
+    #Function to add Node after any Node.
+    
     def Insert_In_Middle(self,prev_node,data):
         if not prev_node:
             print("Previous Node not in the List")
